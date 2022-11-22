@@ -1,7 +1,7 @@
 # ml-math
 Mathematical Foundations of Machine Learning!
 
-This repository contains notes and exercises for implementing mathematical foundations of machine learning using Numpy, TensorFlow and PyTorch, spplementing the Udemy course on [Mathematical Foundations of Machine Learning](https://mapbox.udemy.com/course/machine-learning-data-science-foundations-masterclass/) by Dr. Jon Krohn.
+This repository contains notes and exercises for implementing mathematical foundations of machine learning using [Numpy](https://numpy.org/), [TensorFlow](https://www.tensorflow.org/) and [PyTorch](https://pytorch.org/), supplementing the Udemy course on [Mathematical Foundations of Machine Learning](https://mapbox.udemy.com/course/machine-learning-data-science-foundations-masterclass/) by Dr. Jon Krohn.
 
 ## Course Description
 
