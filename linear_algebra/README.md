@@ -22,19 +22,19 @@ Convert to a system of linear equations
 Therefore:
 `t = 30 min` and `d = 75 km`
 
-### In a system of linear equations:
+## In a system of linear equations:
 - There could be many equations
 - There could be many unknowns in each equation
 
-Example:
+### Example:
 We want to predict house prices based on a number of variables. This is a regression model. A deep learning model may consists of millions of rows `n` and millions of features `m` in an `n` x `m` matrix.
 
-$$
-y_1 = a + b_{x11} + c_{x12} + ... + m_{x1m}\\  
-y_2 = a + b_{x21} + c_{x22} + ... + m_{x2m}\\  
-\vdots\\  
-y_n = a + b_{xn1} + c_{xn2} + ... + m_{xnm}\\  
-$$
+```math
+y_1 = a + b_{x11} + c_{x12} + ... + m_{x1m}<br />
+y_2 = a + b_{x21} + c_{x22} + ... + m_{x2m}<br />
+\vdots<br />
+y_n = a + b_{xn1} + c_{xn2} + ... + m_{xnm}
+```
 
 - y: house price we want to predict
 - a: y-intercept (allows us to have an average over al other predicted house prices)
@@ -43,6 +43,6 @@ $$
 - m: any other relevant features
 - x: the values associated with each feature (inputs into the model)
 
-We are trying to solve for the unknown paramters `a`, `b`, `c` and `m` in order to predict y.
+We are trying to solve for the unknown paramters `a`, `b`, `c` and `m` in order to predict `y`.
 
 Weights and biases are tuned by machine learning algorithms in order to map the input values into a predicted result.
