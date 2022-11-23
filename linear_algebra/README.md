@@ -30,9 +30,9 @@ Example:
 We want to predict house prices based on a number of variables. This is a regression model. A deep learning model may consists of millions of rows `n` and millions of features `m` in an `n` x `m` matrix.
 
 $$
-y_1 = a + b_{x11} + c_{x12} + ... + m_{x1m}  
-y_2 = a + b_{x21} + c_{x22} + ... + m_{x2m}  
-\vdots  
+y_1 = a + b_{x11} + c_{x12} + ... + m_{x1m}  \\
+y_2 = a + b_{x21} + c_{x22} + ... + m_{x2m}  \\
+\vdots  \\
 y_n = a + b_{xn1} + c_{xn2} + ... + m_{xnm}  
 $$
 
