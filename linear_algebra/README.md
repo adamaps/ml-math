@@ -29,10 +29,10 @@ Therefore:
 Example:
 We want to predict house prices based on a number of variables. This is a regression model. A deep learning model may consists of millions of rows `n` and millions of features `m` in an `n` x `m` matrix.
 
-y1 = a + bx11 + cx12 + ... + mx1m
-y1 = a + bx21 + cx22 + ... + mx2m
-...
-yn = a + bxn1 + cxn2 + ... + mxnm
+$\y1 = a + b_x11 + c_x12 + ... + m_x1m
+$\y1 = a + b_x21 + c_x22 + ... + m_x2m
+$\...
+$\yn = a + b_xn1 + c_xn2 + ... + m_xnm
 
 y: house price we want to predict
 a: y-intercept (allows us to have an average over al other predicted house prices)
