@@ -23,3 +23,22 @@ Led by deep learning guru Dr. Jon Krohn, this course provides a firm grasp of th
 - Automatic Differentiation
 - Partial-Derivative Calculus
 - Integral Calculus
+
+## Jupyter Lab Notebook Setup
+
+All of the Jupyter Lab notebooks in this repository were run using the following steps (assuming docker is already installed):
+
+1. Run minimal Jupyter Lab notebook in docker container:
+
+```bash
+docker run -p 8888:8888 -v $(pwd):/home/jovyan/work jupyter/minimal-notebook
+```
+2. Copy/paste URL token into browser e.g.:
+```
+http://127.0.0.1:8888/lab?token=b4d93753537af915173d374df05caec6f9cb5808761b3e9b
+```
+3. Using the Jupyter Lab Terminal session, install the following libraries:
+```shell
+pip  install numpy matplotlib
+```
+4. Upload .ipynb file into Jupyter Lab notebook
