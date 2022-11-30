@@ -14,7 +14,7 @@ n|n-tensor|higher dimension|
 
 Single numeric dimensionless value denoted by single italic lowercase letter e.g. $x$
 
-Two common libraries are used for tensors, which include the ability to perform automatical differentiation. These are `PyTorch` and `tensorFlow`
+Two common libraries are used for tensors, which include the ability to perform automatical differentiation. These are `PyTorch` and `TensorFlow`
 
 ### PyTorch
 
@@ -48,4 +48,44 @@ tensorflow.Variable(25)
 
 One-dimensional array of numbers denoted by a single bold-italic lowercase letter e.g. $\boldsymbol{x} = [x_1, x_2, x_3]$
 
-Common operation, transpose is as follows: $$[x_1, x_2, x_3]^T = {\left\lbrack \matrix{x_1 \cr x_2 \cr x_3} \right\rbrack}$$
+Common operation, transpose $n \cdot m$ to $m \cdot n$ as follows: $$[x_1, x_2, x_3]^T = {\left\lbrack \matrix{x_1 \cr x_2 \cr x_3} \right\rbrack}$$
+
+### Numpy
+
+```python
+import numpy
+
+# Produce a vector of size 3 (just a length) - optionally include dtype e.g. dtype=numpy.float16
+x = np.array([25, 2, 5])
+
+# You can only transpose a 1-dimensional array if you nest the array in the first element
+# of a multi-dimensional array
+y = np.array([[25, 2, 5]]).T
+
+# Output
+> array([[25],
+         [ 2],
+         [ 5]])
+```
+
+### PyTorch
+```python
+import torch
+
+# Produce a vector tensor - optionally include dtype e.g. dtype=torch.float16
+torch.tensor([25, 2, 5])
+
+# Output
+> tensor([25,  2,  5])
+```
+
+### TensorFlow
+```python
+import tensorflow
+
+# Produce a vector tensor - optionally include dtype e.g. dtype=torch.float16
+tensorflow.Variable([25, 2, 5])
+
+# Output
+> <tf.Variable 'Variable:0' shape=(3,) dtype=int32, numpy=array([25,  2,  5], dtype=int32)>
+```
