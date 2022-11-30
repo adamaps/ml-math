@@ -46,6 +46,6 @@ tensorflow.Variable(25)
 
 ## Vectors
 
-One-dimensional array of numbers denoted by a single bold-italic lowercase letter e.g. $\bm{x} = [x_1, x_2, x_3]$
+One-dimensional array of numbers denoted by a single bold-italic lowercase letter e.g. $\boldsymbol{x} = [x_1, x_2, x_3]$
 
 Common operation, transpose is as follows: $$[x_1, x_2, x_3]^T = {\left\lbrack \matrix{x_1 \cr x_2 \cr x_3} \right\rbrack}$$
