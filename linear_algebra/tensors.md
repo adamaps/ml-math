@@ -6,7 +6,7 @@ Dimension|Mathematical Name|Description|Form
 ---|---|---|---
 0|scalar|magnitude|$x$
 1|vector|array|$[x_1, x_2, x_3]$
-2|matrix|table|${\left\lbrack \matrix{x_{1,1} & x_{1,2} \cr x_{2,1} & x_{2,2}} \right\rbrack}$
+2|matrix|table|${\left\lbrack \matrix{X_{1,1} & X_{1,2} \cr X_{2,1} & X_{2,2}} \right\rbrack}$
 3|3-tensor|3D-table/cube|
 n|n-tensor|higher dimension|
 
@@ -96,7 +96,7 @@ tensorflow.Variable([25, 2, 5])
 > <tf.Variable 'Variable:0' shape=(3,) dtype=int32, numpy=array([25,  2,  5], dtype=int32)>
 ```
 
-## Norms and Unit Vectors
+### Norms and Unit Vectors
 
 Representing a `magnitude` and `direction` from origin. Norms are a class of function that allow us to quantify the magnitude (length) of a vector.
 
@@ -182,3 +182,99 @@ where p must be:
 - greater than or equal to one
 
 Norms, particularly $L^1$ and $L^2$ are used to regularize objective functions.
+
+### Basis, Orthogonal, and Orthonormal Vectors
+
+### Basis
+- Can be scale to represent __any__ vector in a given vector space.
+- Typically use unit vectors along axes of cector space. If $i$ and $j$ represent the unit vectors along the $x$ and $y$ axes, respectively, then those same unit vectors can be scaled by any amount along those axes to create a new vector. E.g.
+$$v = 1.5i + 2j$$
+
+### Orthogonal
+- Where the dot product of $\boldsymbol{x}$ and $\boldsymbol{y}$ is zero. I.e. $\boldsymbol{x}^T\boldsymbol{y} = 0$. In other words, vectors $\boldsymbol{x}$ and $\boldsymbol{y}$ are at 90° to each other
+- n-dimensional space has max $n$ muturally orthogonal vectors. E.g. 2D space has at most 2 orthogonal vectors.
+- Othornormal vectors are othogonal __and__ all have unit norm. E.g. the $i$ and $j$ unit vectors of length 1 are both unit vectors and orthogonal vectors, and are therefore orthonormal vectors.
+
+```python
+import numpy
+
+i = np.array([1, 0])
+j = np.array([0, 1])
+numpy.dot(i, j)
+
+# Output
+> 0
+```
+
+## Matrix Tensors
+- Two dimensional array of numbers
+- Denoted in uppercase, italics and bold. e.g. $\boldsymbol{X}$
+- Notation based on height then width e.g. $(n_{row}, n_{col})$
+- A matrix with three rows and 2 columns is denoted (3, 2)
+- Individual scalar elements denoted in uppercase italics only e.g.
+$${\left\lbrack \matrix{X_{1,1} & X_{1,2} \cr X_{2,1} & X_{2,2}} \right\rbrack}$$
+
+- Full rows or columns can be represented using colons e.g. all elements of column 1 is $X_{:,1}$ and all elements of row 2 is $X_{2,:}$.
+
+
+### Python
+```python
+import numpy
+
+# Note the nested brackets
+X = np.array([[25, 2], [5, 26], [3, 7]])
+
+# Get shape
+X.shape
+> (3,2)
+
+# Size = columns x rows
+X.size
+> 6
+
+# All elements of first column
+X[:,0]
+> array([25,  5,  3])
+
+# All elements of middle row
+X[1,:]
+> array([ 5, 26])
+
+# Slicing by-index
+X[0:2, 0:2]
+> array([[25,  2],
+       [ 5, 26]])
+```
+
+### PyTorch
+```python
+import torch
+X_pt = torch.tensor([[25, 2], [5, 26], [3, 7]])
+> tensor([[25,  2],
+        [ 5, 26],
+        [ 3,  7]])
+
+X_pt.shape # more pythonic
+> torch.Size([3, 2])
+
+X_pt[1,:]
+> tensor([ 5, 26])
+```
+
+### Tensorflow
+```python
+import tensorflow
+X_tf = tensorflow.Variable([[25, 2], [5, 26], [3, 7]])
+> <tf.Variable 'Variable:0' shape=(3, 2) dtype=int32, numpy=
+array([[25,  2],
+       [ 5, 26],
+       [ 3,  7]], dtype=int32)>
+tf.rank(X_tf)
+> <tf.Tensor: shape=(), dtype=int32, numpy=2>
+
+tf.shape(X_tf)
+> <tf.Tensor: shape=(2,), dtype=int32, numpy=array([3, 2], dtype=int32)>
+
+X_tf[1,:]
+> <tf.Tensor: shape=(2,), dtype=int32, numpy=array([ 5, 26], dtype=int32)>
+```
