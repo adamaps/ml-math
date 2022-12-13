@@ -39,6 +39,6 @@ http://127.0.0.1:8888/lab?token=b4d93753537af915173d374df05caec6f9cb5808761b3e9b
 ```
 3. Using the Jupyter Lab Terminal session, install the following libraries:
 ```shell
-pip install numpy matplotlib
+pip install numpy matplotlib torch tensorflow
 ```
 4. Upload .ipynb file into Jupyter Lab notebook
