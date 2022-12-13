@@ -2,9 +2,11 @@
 
 Calculating the sum of all elements of a tensor is a common operation.
 
-For a vector $\boldsymbol{x}$ of length $n$, we calculate $\sum^n_{i=1}x_i$
+For a vector $\boldsymbol{x}$ of length $n$, we calculate:
+$$\sum^n_{i=1}x_i$$
 
-For a matrix $\boldsymbol{X}$ of dimension $m$ x $n$, we calculate $\sum^m_{i=1}\sum^n_{j=1}X_{i,j}$
+For a matrix $\boldsymbol{X}$ of dimension $m$ x $n$, we calculate:
+$$\sum^m_{i=1}\sum^n_{j=1}X_{i,j}$$
 
 ```python
 import torch
